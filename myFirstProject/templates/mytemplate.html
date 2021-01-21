@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <h1 style="color: brown;">Things to do <h2>Fecha {{hora.day}}/{{hora.month}}/{{hora.year}}</h2></h1>
+        <h2>Hola {{nombre|lower}}</h2>
+        <p>
+            <ul>
+                {%if tareas%}
+                    {%for element in tareas %}
+                        <li>{{element}}</li>
+                    {% endfor %}
+                {% else %}
+                    <p>No hay elementos</p>
+                {% endif %}
+            </ul>            
+        </p>
+        
+        
+    </body>
+</html>

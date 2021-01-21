@@ -19,6 +19,6 @@ from myFirstProject.views import saludo,hora
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('saludo/', saludo),
-    path('hora/',hora)
+    path('', saludo),
+    path('hora',hora),
 ]
