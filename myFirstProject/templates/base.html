@@ -1,0 +1,13 @@
+<html>
+    <header>
+        <title>
+            {% block title %}
+            {% endblock%}
+        </title>        
+    </header>
+    <body>
+        {% include "barTemplate.html" %}
+            {% block content %}
+            {% endblock %}        
+    </body>
+</html>

@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 import datetime
 from django.template import Template, Context, loader
+from django.shortcuts import render
 
 def saludo(request):
 
@@ -14,13 +15,13 @@ def saludo(request):
 
     #saludo_template.close()
 
-    my_template = loader.get_template("mytemplate.html")
+    #my_template = loader.get_template("mytemplate.html")
 
     #ctx = Context({"nombre": nombre,"hora": time, "tareas": works})
 
-    document = my_template.render({"nombre": nombre,"hora": time, "tareas": works})
+    #document = my_template.render({"nombre": nombre,"hora": time, "tareas": works})
 
-    return HttpResponse(document)
+    return render(request,"homeTemplate.html",{"nombre": nombre,"hora": time, "tareas": works})
 
 def hora(request):
 
@@ -32,3 +33,8 @@ def hora(request):
     </body></html>"""
 
     return HttpResponse(documento)
+    
+def services(request):
+    
+    time =  datetime.datetime.now()
+    return render(request,"services.html",{"time":time})
