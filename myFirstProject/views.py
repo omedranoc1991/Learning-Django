@@ -38,3 +38,7 @@ def services(request):
     
     time =  datetime.datetime.now()
     return render(request,"services.html",{"time":time})
+
+
+def temporal():
+    return None
